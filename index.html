@@ -14,13 +14,14 @@
     display: block;
 }
   body{margin:0;background:radial-gradient(circle at 15% 0%,#123044 0,transparent 34%),radial-gradient(circle at 100% 30%,#351a43 0,transparent 30%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-.wrap{width:min(760px,100%);margin:auto;padding:22px 15px 42px}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--teal),#3c8dff);display:grid;place-items:center;color:#061321;font-weight:900;font-size:20px}.brand h1{font-size:20px;margin:0;letter-spacing:.4px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.steps{display:flex;gap:7px;margin:16px 0 22px}.stepdot{flex:1;text-align:center;padding:9px 3px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px}.stepdot.active{border-color:var(--teal);color:var(--teal);background:#12302f}.card{background:linear-gradient(160deg,rgba(20,36,58,.97),rgba(11,24,40,.98));border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 16px 45px #0003}.page{display:none}.page.active{display:block}.eyebrow{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}h2{font-size:25px;line-height:1.2;margin:7px 0 9px}p{color:var(--muted);margin:0 0 16px}.packages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.package{border:1px solid var(--line);border-radius:15px;padding:16px;background:#0b1829;color:var(--text);text-align:left;cursor:pointer}.package.selected{border:2px solid var(--teal);background:#10302f;padding:15px}.package strong{display:block;font-size:22px}.package small{display:block;color:var(--muted);margin-top:4px}.price{color:var(--pink);font-weight:800;margin-top:12px}.field{margin:16px 0}.field label{display:block;font-size:13px;color:#c7d5e7;margin-bottom:7px;font-weight:650}input,select{width:100%;background:#081525;border:1px solid #304760;border-radius:11px;padding:13px;color:var(--text);font:inherit;outline:none}input:focus,select:focus{border-color:var(--teal)}.hint{font-size:12px;color:var(--muted);margin-top:6px}.actions{display:flex;gap:10px;margin-top:22px}.btn{border:0;border-radius:12px;padding:13px 17px;font:inherit;font-weight:800;cursor:pointer}.primary{background:linear-gradient(90deg,var(--teal),#6bdbff);color:#061321;flex:1}.secondary{background:#1c2d43;color:var(--text);border:1px solid var(--line)}.notice{background:#2b2518;border:1px solid #66512a;color:#ffdf9c;padding:12px;border-radius:12px;font-size:13px;margin:14px 0}.address{word-break:break-all;background:#081525;border:1px dashed #54708e;border-radius:12px;padding:13px;color:#e5f3ff;font-size:13px}.qrbox{display:grid;place-items:center;background:white;border-radius:14px;width:190px;height:190px;margin:18px auto;padding:10px}.qrbox img{width:170px;height:170px;object-fit:contain}.summary{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin:15px 0}.sumrow{display:flex;justify-content:space-between;gap:18px;padding:11px 13px;border-bottom:1px solid var(--line)}.sumrow:last-child{border-bottom:0}.sumrow span:first-child{color:var(--muted)}.sumrow span:last-child{text-align:right;overflow-wrap:anywhere}.fine{font-size:12px;color:var(--muted)}.success{border:1px solid #28765f;background:#0d2d29;border-radius:14px;padding:16px;margin-top:16px}.footer{text-align:center;color:#71859f;font-size:12px;margin-top:18px}.hidden{display:none!important}@media(max-width:420px){.card{padding:17px}.packages{gap:9px}.package{padding:12px}.package.selected{padding:11px}.package strong{font-size:19px}.stepdot{font-size:10px}}
+.wrap{width:min(760px,100%);margin:auto;padding:22px 15px 42px}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--teal),#3c8dff);display:grid;place-items:center;color:#061321;font-weight:900;font-size:20px}.brand h1{font-size:20px;margin:0;letter-spacing:.4px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.steps{display:flex;gap:7px;margin:16px 0 22px}.stepdot{flex:1;text-align:center;padding:9px 3px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px}.stepdot.active{border-color:var(--teal);color:var(--teal);background:#12302f}.card{background:linear-gradient(160deg,rgba(20,36,58,.97),rgba(11,24,40,.98));border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 16px 45px #0003}.page{display:none}.page.active{display:block}.eyebrow{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}h2{font-size:25px;line-height:1.2;margin:7px 0 9px}p{color:var(--muted);margin:0 0 16px}.packages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.package{border:1px solid var(--line);border-radius:15px;padding:16px;background:#0b1829;color:var(--text);text-align:left;cursor:pointer}.package.selected{border:2px solid var(--teal);background:#10302f;padding:15px}.package strong{display:block;font-size:22px}.package small{display:block;color:var(--muted);margin-top:4px}.price{color:var(--pink);font-weight:800;margin-top:12px}.field{margin:16px 0}.field label{display:block;font-size:13px;color:#c7d5e7;margin-bottom:7px;font-weight:650}
+  input,select{width:100%;background:#081525;border:1px solid #304760;border-radius:11px;padding:13px;color:var(--text);font:inherit;outline:none}input:focus,select:focus{border-color:var(--teal)}.hint{font-size:12px;color:var(--muted);margin-top:6px}.actions{display:flex;gap:10px;margin-top:22px}.btn{border:0;border-radius:12px;padding:13px 17px;font:inherit;font-weight:800;cursor:pointer}.primary{background:linear-gradient(90deg,var(--teal),#6bdbff);color:#061321;flex:1}.secondary{background:#1c2d43;color:var(--text);border:1px solid var(--line)}.notice{background:#2b2518;border:1px solid #66512a;color:#ffdf9c;padding:12px;border-radius:12px;font-size:13px;margin:14px 0}.address{word-break:break-all;background:#081525;border:1px dashed #54708e;border-radius:12px;padding:13px;color:#e5f3ff;font-size:11px}.qrbox{display:grid;place-items:center;background:white;border-radius:14px;width:190px;height:190px;margin:18px auto;padding:10px}.qrbox img{width:170px;height:170px;object-fit:contain}.summary{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin:15px 0}.sumrow{display:flex;justify-content:space-between;gap:18px;padding:11px 13px;border-bottom:1px solid var(--line)}.sumrow:last-child{border-bottom:0}.sumrow span:first-child{color:var(--muted)}.sumrow span:last-child{text-align:right;overflow-wrap:anywhere}.fine{font-size:12px;color:var(--muted)}.success{border:1px solid #ef0729;background:#f6151554;border-radius:14px;padding:16px;margin-top:16px}.footer{text-align:center;color:#71859f;font-size:12px;margin-top:18px}.hidden{display:none!important}@media(max-width:420px){.card{padding:17px}.packages{gap:9px}.package{padding:12px}.package.selected{padding:11px}.package strong{font-size:19px}.stepdot{font-size:10px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="brand">
-    <img src="usdtlogo.png" alt="USDT Logo" class="usdtlogo">
+    <img src="usdtlogo.png" alt="Logo" class="usdtlogo">
     <div>
       <h1>FLASH USDT SERVICES</h1>
       <p>Transparent order submission</p>
@@ -56,7 +57,7 @@
     margin-bottom: 20px;
 }
 .telegram-button:hover {
-    background: #c0165b;
+    background: #264ee5;
 }
 </style>
 
@@ -64,13 +65,15 @@
       <div class="eyebrow">Step 1 of 5</div><h2>Choose your service package</h2>
       <p>Select the package you want to order. Prices and deliverables must be clearly agreed before payment.</p>
       <div class="packages" id="packages">
-        <button class="package selected" type="button" data-package="Starter" data-amount="50" data-credits="3000"><strong>Starter</strong><small>3000 service credits</small><div class="price">50 USDT</div></button>
-        <button class="package" type="button" data-package="Basic" data-amount="90" data-credits="6000"><strong>Basic</strong><small>6000 service credits</small><div class="price">90 USDT</div></button>
-        <button class="package" type="button" data-package="Plus" data-amount="170" data-credits="12000"><strong>Plus</strong><small>12000 service credits</small><div class="price">170 USDT</div></button>
-        <button class="package" type="button" data-package="Pro" data-amount="320" data-credits="24000"><strong>Pro</strong><small>24000 service credits</small><div class="price">320 USDT</div></button>
+        <button class="package selected" type="button" data-package="Starter" data-amount="90" data-credits="3000"><strong>Starter</strong><small>3k service credits</small><div class="price">90 USDT</div></button>
+        <button class="package" type="button" data-package="Basic" data-amount="140" data-credits="5000"><strong>Basic</strong><small>5k service credits</small><div class="price">140 USDT</div></button>
+        <button class="package" type="button" data-package="Bronze" data-amount="249" data-credits="10000"><strong>Bronze</strong><small>10k service credits</small><div class="price">249 USDT</div></button>
+        <button class="package" type="button" data-package="Silver" data-amount="380" data-credits="20000"><strong> Silver</strong><small>20k service credits</small><div class="price">380 USDT</div></button>
+        <button class="package" type="button" data-package="Gold" data-amount="600" data-credits="50000"><strong>Gold</strong><small>50k service credits</small><div class="price">600 USDT</div></button>
+        <button class="package" type="button" data-package="Pro" data-amount="900" data-credits="100000"><strong>Pro</strong><small>100k service credits</small><div class="price">900 USDT</div></button>
         
       </div>
-      <div class="notice"><u>SPECIAL NOTE: TOKEN </u> validity is <u>160</u> days.</div>
+      <div class="notice"> ⚠️ :TOKEN validity: <u> 160 </u> days.</div>
       <div class="actions"><button class="btn primary" type="button" onclick="go(2)">Continue to wallet →</button></div>
     </section>
 
@@ -78,7 +81,10 @@
       <div class="eyebrow">Step 2 of 5</div><h2>Receiving wallet details</h2>
       <p>Enter the wallet address where the legitimate service output, if applicable, should be delivered. Check the network carefully.</p>
       <div class="field"><label for="wallet">Your receiving wallet address</label><input id="wallet" autocomplete="off" placeholder="Enter your wallet address"></div>
-      <div class="field"><label for="network">Network</label><select id="network"><option value="TRC20">TRC20 (TRON)</option><option value="BEP20">BEP20 (BNB Smart Chain)</option><option value="ERC20">ERC20 (Ethereum)</option></select></div>
+      <div class="field"><label for="network">Network</label>
+      <select id="network"><option value="TRC20">TRC20 (TRON)</option>
+      <option value="BEP20">BEP20 (BNB Smart Chain)</option>
+      <option value="ERC20">ERC20 (Ethereum)</option></select></div>
       <div class="field"><label for="customer">Contact name (optional)</label><input id="customer" placeholder="Your name or order reference"></div>
       <div class="notice">Sending assets on the wrong network can cause permanent loss. Confirm the address and network before proceeding.</div>
       <div class="actions"><button class="btn secondary" type="button" onclick="go(1)">← Back</button><button class="btn primary" type="button" onclick="walletNext()">Continue →</button></div>
@@ -87,7 +93,7 @@
     <section class="page" data-page="3">
       <div class="eyebrow">Step 3 of 5</div><h2>Payment instructions</h2>
       <p>Send only the exact amount shown below, using the selected network. Confirm the receiving address independently before paying.</p>
-      <div class="summary"><div class="sumrow"><span>Package</span><span id="payPackage">Starter</span></div><div class="sumrow"><span>Amount</span><span id="payAmount">50 USDT</span></div><div class="sumrow"><span>Network</span><span id="payNetwork">TRC20</span></div></div>
+      <div class="summary"><div class="sumrow"><span>Package</span><span id="payPackage">Starter</span></div><div class="sumrow"><span>Amount</span><span id="payAmount">90 USDT</span></div><div class="sumrow"><span>Network</span><span id="payNetwork">TRC20</span></div></div>
       <label class="fine">Admin payment address.copy address and make transaction on selected network.</label>
       <div class="address" id="paymentAddress">ADMIN_PAYMENT_ADDRESS_NOT_CONFIGURED</div>
       <div class="qrbox"><img id="qr" alt="QR code for payment address" src="" /></div>
@@ -108,7 +114,7 @@
       <div class="eyebrow">Step 5 of 5</div><h2>Review and submit</h2>
       <p>Check all details. Your order should remain pending until the payment is independently verified.</p>
       <div class="summary" id="review"></div>
-      <div class="notice">When you submit, your order details are sent to the order-notification service for delivery.System verify and complete Transaction Independently .</div>
+      <div class="notice">When you submit, your order details are sent to the order-notification service for delivery. System verifies and release independently.</div>
       <label class="fine"><input id="agree" type="checkbox" style="width:auto;margin-right:8px">I checked the details and understand payment is pending verification.</label>
       <div class="actions"><button class="btn secondary" type="button" onclick="go(4)">← Back</button><button class="btn primary" type="button" onclick="submitOrder()">Confirm order</button></div>
       <div id="result" class="success hidden"></div>
@@ -122,7 +128,7 @@ const ADMIN_PAYMENT_ADDRESSES = {
   BEP20: "0x3cad8ecd3428032bdbb66038a3286388da516579",
   ERC20: "0x3cad8ecd3428032bdbb66038a3286388da516579"
 };
-const state = {package:"Starter", amount:"50", credits:"3000"};
+const state = {package:"Starter", amount:"90", credits:"3000"};
 document.querySelectorAll(".package").forEach(btn=>btn.addEventListener("click",()=>{
   document.querySelectorAll(".package").forEach(b=>b.classList.remove("selected"));
   btn.classList.add("selected");
@@ -212,7 +218,7 @@ async function submitOrder(){
       body:JSON.stringify(order)
     });
     result.classList.remove("hidden");
-    result.innerHTML="<strong>Order submission sent.</strong><p>Your browser cannot confirm whether Telegram delivered the notification. The order is still pending verification. Please contact the administrator if no notification arrives; do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
+    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for quiery. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
   }catch(err){
     result.classList.remove("hidden");
     result.innerHTML="<strong>Could not send the order.</strong><p>Check your internet connection and try again later. No payment has been verified.</p>";
