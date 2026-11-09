@@ -218,7 +218,7 @@ async function submitOrder(){
       body:JSON.stringify(order)
     });
     result.classList.remove("hidden");
-    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for quiery. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
+    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for query. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
   }catch(err){
     result.classList.remove("hidden");
     result.innerHTML="<strong>Could not send the order.</strong><p>Check your internet connection and try again later. No payment has been verified.</p>";
