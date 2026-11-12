@@ -11,7 +11,7 @@
 
 *{box-sizing:border-box}
 
-.coin-logo {
+.usdtlogo {
     width: 55px;
     height: 55px;
     object-fit: contain;
@@ -76,17 +76,6 @@ p{color:var(--muted);margin:0 0 16px}
     grid-column:1/-1;
     cursor:pointer
 }
-  .countdown {
-    margin-top: 12px;
-    padding: 8px;
-    border-radius: 10px;
-    background: rgba(6, 245, 255, 0.08);
-    border: 1px solid rgba(6, 245, 255, 0.25);
-    text-align: center;
-    color: var(--teal);
-    font-size: 14px;
-    font-weight: 800;
-}
 
 /* Selection effect for all packages, including Demo */
 
@@ -148,7 +137,8 @@ input:focus,select:focus{border-color:var(--teal)}
 .footer{text-align:center;color:#71859f;font-size:12px;margin-top:18px}
 
 .hidden{display:none!important}
-  .floating-bounce {
+
+    .floating-bounce {
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -183,56 +173,33 @@ input:focus,select:focus{border-color:var(--teal)}
     .package strong{font-size:19px}
     .package1 strong{font-size: 19px}
     .stepdot{font-size:10px}
-    .telegram-button {
-    display: inline-block;
-    background: #229ED9;
-    color: white;
-    padding-left: 110px ;
-    border-radius: 8px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    width: 280px;
-    height:30px;
-    border-radius:40px;
-    margin-bottom: 20px;
 }
-.logo-container {
+.usdtlogo {
     width: 55px;
     height: 55px;
-    perspective: 600px;
-}
-
-.coin-logo {
-    width: 100%;
-    height: 100%;
     object-fit: contain;
-    display: block;
-    animation: coinSpin 3s linear infinite !important;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
+    perspective: 1000px;
+    animation: coinSpin 4s linear infinite;
+    filter: drop-shadow(0 0 12px #00f2c6);
 }
 
 @keyframes coinSpin {
-    0% {
+    from {
         transform: rotateY(0deg);
     }
-    100% {
+    to {
         transform: rotateY(360deg);
     }
 }
-.telegram-button:hover {
-    background: #264ee5;
-}
-}
+  
 </style>
 
 </head>
 <body>
-<div class="logo-container">
-    <img src="logo.png" class="coin-logo" alt="Logo">
-</div>
+<div class="wrap">
+  <header class="brand">
+    <img src="usdtlogo.png" alt="Logo" class="usdtlogo">
+    <div>
       <h1>FLASH USDT SERVICES</h1>
       <p>Transparent order submission</p>
     </div>
@@ -241,6 +208,7 @@ input:focus,select:focus{border-color:var(--teal)}
         <div class="stepdot active" data-dot="1">1 · Package</div><div class="stepdot" data-dot="2">2 · Wallet</div><div class="stepdot" data-dot="3">3.Payment</div><div class="stepdot" data-dot="4">4 · TX ID</div><div class="stepdot" data-dot="5">5 · Review</div>
 
   </div>
+  <main class="card">
 
     <section class="page active" data-page="1">
       <div class="eyebrow">Step 1 of 5</div><h2>Choose your service package</h2>
@@ -425,13 +393,12 @@ async function submitOrder(){
 }
   
 </script>
-  <a href="https://t.me/Flash_Servicess"
+    <a href="https://t.me/Flash_Servicess"
    target="_blank"
    class="floating-bounce">
 
-    <img src="support.png" alt="Contact on Telegram">
+    <img src="support.png" alt="support">
 
 </a>
-</div>
 </body>
 </html>
