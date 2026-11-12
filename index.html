@@ -176,24 +176,31 @@ input:focus,select:focus{border-color:var(--teal)}
     to {
         transform: rotateY(360deg);
     }
+.floating-bounce {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+    animation: floatingBounce 2s ease-in-out infinite;
 }
-.telegram-button {
-    display: inline-block;
-    background: #229ED9;
-    color: white;
-    padding-left: 110px ;
-    border-radius: 8px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    width: 280px;
-    height:30px;
-    border-radius:40px;
-    margin-bottom: 20px;
+
+.floating-bounce img {
+    width: 85px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
-.telegram-button:hover {
-    background: #264ee5;
+
+@keyframes floatingBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+}
+
 }
 </style>
 
@@ -210,16 +217,11 @@ input:focus,select:focus{border-color:var(--teal)}
   <div class="steps" aria-label="Order progress">
         <div class="stepdot active" data-dot="1">1 · Package</div><div class="stepdot" data-dot="2">2 · Wallet</div><div class="stepdot" data-dot="3">3.Payment</div><div class="stepdot" data-dot="4">4 · TX ID</div><div class="stepdot" data-dot="5">5 · Review</div>
 
-  </div>
-  <main class="card">
-    
-<a href="https://t.me/Flash_Servicess"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="telegram-button">
-   ✈ Query
-</a>
+<div class="bouncing-image">
+    <img src="support.png" alt="Telegram">
+</div>
 
+  <div>
     <section class="page active" data-page="1">
       <div class="eyebrow">Step 1 of 5</div><h2>Choose your service package</h2>
       <p>Select the package you want to order. Prices and deliverables must be clearly agreed before payment.</p>
@@ -403,5 +405,8 @@ async function submitOrder(){
 }
   
 </script>
+<div class="floating-bounce">
+    <img src="support.png" alt="✍️">
+</div>
 </body>
 </html>
