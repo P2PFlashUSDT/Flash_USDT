@@ -1,225 +1,191 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FLASH USDT SERVICES</title>
+<meta name="theme-color" content="#07111f">
+<title>USDT Service — Order Portal</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+:root{--bg:#07111f;--panel:#101d30;--panel2:#14243a;--text:#edf5ff;--muted:#9db0c9;--teal:#06f5ff;--pink:#ff68bb;--line:#263c56;--warn:#ffd27d}
 
-body {
-    margin: 0;
-    padding: 20px 14px;
-    font-family: Arial, sans-serif;
-    background: #050b12;
-    color: white;
-}
-
-.wrap {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-}
-
-/* HEADER */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px;
-    margin-bottom: 22px;
-}
+*{box-sizing:border-box}
 
 .usdtlogo {
     width: 55px;
     height: 55px;
     object-fit: contain;
-}
-
-.brand h1 {
-    font-size: 19px;
-    margin: 0;
-    color: #ffffff;
-}
-
-.brand p {
-    font-size: 12px;
-    color: #aab6c5;
-    margin: 5px 0 0;
-}
-
-/* MAIN CARD */
-
-.card {
-    background: #111a2d;
-    border: 2px solid #075b55;
-    border-radius: 20px;
-    padding: 24px 18px;
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.08);
-}
-
-h2 {
-    color: #00e6b5;
-    font-size: 25px;
-    text-align: center;
-    margin: 5px 0 25px;
-}
-
-.description {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-/* FIELD GROUP */
-
-.copy-group {
-    margin-top: 22px;
-}
-
-.copy-group label {
     display: block;
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 10px;
 }
 
-/* COPY BAR */
-
-.copy-container {
-    display: flex;
-    width: 100%;
-    height: 70px;
-    border: 2px solid #075b55;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #101a2c;
-    box-shadow: 0 0 12px rgba(0, 255, 200, 0.08);
+body{
+    margin:0;
+    background:radial-gradient(circle at 15% 0%,#123044 0,transparent 34%),radial-gradient(circle at 100% 30%,#351a43 0,transparent 30%),var(--bg);
+    color:var(--text);
+    font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    min-height:100vh
 }
 
-.copy-container input {
-    flex: 1;
-    min-width: 0;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #ffffff;
-    padding: 0 12px;
-    font-size: 15px;
-    text-align: center;
+.wrap{width:min(760px,100%);margin:auto;padding:22px 15px 42px}
+
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--teal),#3c8dff);display:grid;place-items:center;color:#061321;font-weight:900;font-size:20px}
+
+.brand h1{font-size:20px;margin:0;letter-spacing:.4px}
+
+.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
+
+.steps{display:flex;gap:7px;margin:16px 0 22px}
+
+.stepdot{flex:1;text-align:center;padding:9px 3px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px}
+
+.stepdot.active{border-color:var(--teal);color:var(--teal);background:#12302f}
+
+.card{background:linear-gradient(160deg,rgba(20,36,58,.97),rgba(11,24,40,.98));border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 16px 45px #0003}
+
+.page{display:none}
+
+.page.active{display:block}
+
+.eyebrow{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+
+h2{font-size:25px;line-height:1.2;margin:7px 0 9px}
+
+p{color:var(--muted);margin:0 0 16px}
+
+.packages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+
+.package{
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:16px;
+    background:#0b1829;
+    color:var(--text);
+    text-align:left;
+    cursor:pointer
 }
 
-.copy-btn {
-    width: 78px;
-    min-width: 78px;
-    border: none;
-    border-radius: 0;
-    background: #00e6b5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.package1{
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:16px;
+    background:#0b1829;
+    color:var(--text);
+    text-align:left;
+    grid-column:1/-1;
+    cursor:pointer
 }
-
-.copy-btn svg {
-    width: 28px;
-    height: 28px;
-    fill: #071a22;
-}
-
-.copy-btn:active {
-    background: #00cfa4;
-}
-
-/* TRANSACTION FIELD */
-
-.input-field {
-    width: 100%;
-    height: 60px;
-    padding: 12px;
-    border: 2px solid #075b55;
-    border-radius: 12px;
-    background: #101a2c;
-    color: white;
-    font-size: 15px;
-    outline: none;
-}
-
-.input-field::placeholder {
-    color: #8994a5;
-}
-
-/* SUBMIT BUTTON */
-
-.main-button {
-    width: 100%;
-    min-height: 65px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 13px;
-    background: #00dfb0;
-    color: #071a22;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.main-button:active {
-    background: #00c99e;
-}
-
-/* WARNING */
-
-.notice {
-    background: #292526;
-    border-right: 6px solid #ffd000;
+  .countdown {
+    margin-top: 12px;
+    padding: 8px;
     border-radius: 10px;
-    padding: 16px;
-    margin-top: 24px;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* STATUS */
-
-#copyStatus {
+    background: rgba(6, 245, 255, 0.08);
+    border: 1px solid rgba(6, 245, 255, 0.25);
     text-align: center;
-    color: #00e6b5;
+    color: var(--teal);
     font-size: 14px;
-    margin-top: 14px;
-    min-height: 18px;
+    font-weight: 800;
 }
 
-/* FOOTER */
+/* Selection effect for all packages, including Demo */
 
-footer {
-    text-align: center;
-    color: #8994a5;
-    font-size: 12px;
-    margin: 25px 0 10px;
+.package.selected,
+.package1.selected{
+    border:2px solid var(--teal);
+    background:#10302f;
+    padding:15px
 }
 
-/* SMALL SCREENS */
+.package strong{display:block;font-size:22px}
 
-@media (max-width: 360px) {
-    .brand h1 {
-        font-size: 16px;
-    }
+.package small{display:block;color:var(--muted);margin-top:4px}
 
-    .copy-container input {
-        font-size: 12px;
-    }
+.package1 small{display:block;color:var(--muted);margin-top:4px}
+
+.price{color:var(--pink);font-weight:800;margin-top:12px}
+
+.field{margin:16px 0}
+
+.field label{display:block;font-size:13px;color:#c7d5e7;margin-bottom:7px;font-weight:650}
+
+input,select{width:100%;background:#081525;border:1px solid #304760;border-radius:11px;padding:13px;color:var(--text);font:inherit;outline:none}
+
+input:focus,select:focus{border-color:var(--teal)}
+
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+.actions{display:flex;gap:10px;margin-top:22px}
+
+.btn{border:0;border-radius:12px;padding:13px 17px;font:inherit;font-weight:800;cursor:pointer}
+
+.primary{background:linear-gradient(90deg,var(--teal),#6bdbff);color:#061321;flex:1}
+
+.secondary{background:#1c2d43;color:var(--text);border:1px solid var(--line)}
+
+.notice{background:#2b2518;border:1px solid #66512a;color:#ffdf9c;padding:12px;border-radius:12px;font-size:13px;margin:14px 0}
+
+.address{word-break:break-all;background:#081525;border:1px dashed #54708e;border-radius:12px;padding:13px;color:#e5f3ff;font-size:11px}
+
+.qrbox{display:grid;place-items:center;background:white;border-radius:14px;width:190px;height:190px;margin:18px auto;padding:10px}
+
+.qrbox img{width:170px;height:170px;object-fit:contain}
+
+.summary{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin:15px 0}
+
+.sumrow{display:flex;justify-content:space-between;gap:18px;padding:11px 13px;border-bottom:1px solid var(--line)}
+
+.sumrow:last-child{border-bottom:0}
+
+.sumrow span:first-child{color:var(--muted)}
+
+.sumrow span:last-child{text-align:right;overflow-wrap:anywhere}
+
+.fine{font-size:12px;color:var(--muted)}
+
+.success{border:1px solid #ef0729;background:#f6151554;border-radius:14px;padding:16px;margin-top:16px}
+
+.footer{text-align:center;color:#71859f;font-size:12px;margin-top:18px}
+
+.hidden{display:none!important}
+
+@media(max-width:420px){
+    .card{padding:17px}
+    .packages{gap:9px}
+    .package{padding:12px}
+    .package1{padding:12px}
+    .package.selected{padding:11px}
+    .package1.selected{padding:11px}
+    .package strong{font-size:19px}
+    .package1 strong{font-size: 19px}
+    .stepdot{font-size:10px}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <img src="logo.png" alt="Logo" class="coin-logo">
+    <div>
+      <h1>FLASH USDT SERVICES</h1>
+      <p>Transparent order submission</p>
+    </div>
+  </header>
+  <div class="steps" aria-label="Order progress">
+        <div class="stepdot active" data-dot="1">1 · Package</div><div class="stepdot" data-dot="2">2 · Wallet</div><div class="stepdot" data-dot="3">3.Payment</div><div class="stepdot" data-dot="4">4 · TX ID</div><div class="stepdot" data-dot="5">5 · Review</div>
+
+  </div>
+  <main class="card">
+    
+<a href="https://t.me/Flash_Servicess"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="telegram-button">
+   ✈ Query
+</a>
+
+<style>
 .coin-logo {
     width: 180px;
     height: 180px;
@@ -237,236 +203,208 @@ footer {
         transform: rotateY(360deg);
     }
 }
-    .copy-btn {
-        width: 65px;
-        min-width: 65px;
-    }
+.telegram-button {
+    display: inline-block;
+    background: #229ED9;
+    color: white;
+    padding-left: 110px ;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 280px;
+    height:30px;
+    border-radius:40px;
+    margin-bottom: 20px;
+}
+.telegram-button:hover {
+    background: #264ee5;
 }
 </style>
-</head>
 
-<body>
-
-<div class="wrap">
-
-    <!-- HEADER -->
-
-    <header class="brand">
-
-        <img
-            src="usdtlogo.png"
-            alt="USDT Logo"
-            class="coin-logo"
-        >
-
-        <div>
-            <h1>FLASH USDT SERVICES</h1>
-            <p>Transparent order submission</p>
-        </div>
-
-    </header>
-
-
-    <!-- PAYMENT CARD -->
-
-    <section class="card">
-
-        <h2>Payment Information</h2>
-
-        <p class="description">
-            Please verify the payment details carefully
-            before making your transaction.
-        </p>
-
-
-        <!-- WALLET ADDRESS -->
-
-        <div class="copy-group">
-
-            <label>Payment Wallet Address</label>
-
-            <div class="copy-container">
-
-                <input
-                    type="text"
-                    id="walletAddress"
-                    value="ADD"
-                    readonly
-                >
-
-                <button
-                    type="button"
-                    class="copy-btn"
-                    onclick="copyField('walletAddress')"
-                    aria-label="Copy wallet address"
-                >
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1z"/>
-                        <path d="M20 5H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h12v14z"/>
-                    </svg>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- NETWORK -->
-
-        <div class="copy-group">
-
-            <label>Payment Network</label>
-
-            <div class="copy-container">
-
-                <input
-                    type="text"
-                    id="network"
-                    value="TRC20"
-                    readonly
-                >
-
-              
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1z"/>
-                        <path d="M20 5H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h12v14z"/>
-                    </svg>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- TRANSACTION ID -->
-
-        <div class="copy-group">
-
-            <label>Transaction ID / Hash</label>
-
-            <div class="copy-container">
-
-                <input
-                    type="text"
-                    id="transactionId"
-                    placeholder="Enter transaction ID"
-                >
-
-                
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1z"/>
-                        <path d="M20 5H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h12v14z"/>
-                    </svg>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- SUBMIT -->
-
-        <button
-            type="button"
-            class="main-button"
-            onclick="submitOrder()"
-        >
-            Submit Transaction ID
-        </button>
-
-
-        <!-- COPY STATUS -->
-
-        <div id="copyStatus"></div>
-
-
-        <!-- WARNING -->
-
-        <div class="notice">
-            ⚠️ Always verify the wallet address and
-            payment network before sending funds.
-            Cryptocurrency transfers can be irreversible.
-            A transaction ID alone does not confirm payment.
-        </div>
-
+    <section class="page active" data-page="1">
+      <div class="eyebrow">Step 1 of 5</div><h2>Choose your service package</h2>
+      <p>Select the package you want to order. Prices and deliverables must be clearly agreed before payment.</p>
+      <div class="packages" id="packages">
+        <button class="package1" type="button" data-package="Demo" data-amount="30" data-credits="1000"><strong>Demo</strong><small>1000 service credits</small> <div class="price">30 USDT</div> </button>
+        <button class="package selected" type="button" data-package="Starter" data-amount="90" data-credits="3000"><strong>Starter</strong><small>3k service credits</small><div class="price">90 USDT</div></button>
+        <button class="package" type="button" data-package="Basic" data-amount="140" data-credits="5000"><strong>Basic</strong><small>5k service credits</small><div class="price">140 USDT</div></button>
+        <button class="package" type="button" data-package="Bronze" data-amount="249" data-credits="10000"><strong>Bronze</strong><small>10k service credits</small><div class="price">249 USDT</div></button>
+        <button class="package" type="button" data-package="Silver" data-amount="380" data-credits="20000"><strong> Silver</strong><small>20k service credits</small><div class="price">380 USDT</div></button>
+        <button class="package" type="button" data-package="Gold" data-amount="600" data-credits="50000"><strong>Gold</strong><small>50k service credits</small><div class="price">600 USDT</div></button>
+        <button class="package" type="button" data-package="Pro" data-amount="900" data-credits="100000"><strong>Pro</strong><small>100k service credits</small><div class="price">900 USDT</div></button>
+        
+      </div>
+      <div class="notice"> ⚠️ :TOKEN validity: <u> 160 </u> days.</div>
+      <div class="actions"><button class="btn primary" type="button" onclick="go(2)">Continue to wallet →</button></div>
     </section>
 
+    <section class="page" data-page="2">
+      <div class="eyebrow">Step 2 of 5</div><h2>Receiving wallet details</h2>
+      <p>Enter the wallet address where the legitimate service output, if applicable, should be delivered. Check the network carefully.</p>
+      <div class="field"><label for="wallet">Your receiving wallet address</label><input id="wallet" autocomplete="off" placeholder="Enter your wallet address"></div>
+      <div class="field"><label for="network">Network</label>
+      <select id="network"><option value="TRC20">TRC20 (TRON)</option>
+      <option value="BEP20">BEP20 (BNB Smart Chain)</option>
+      <option value="ERC20">ERC20 (Ethereum)</option></select></div>
+      <div class="field"><label for="customer">Telegram ID</label><input id="customer" placeholder="Your Telegram ID"></div>
+      <div class="notice">Sending assets on the wrong network can cause permanent loss. Confirm the address and network before proceeding.</div>
+      <div class="actions"><button class="btn secondary" type="button" onclick="go(1)">← Back</button><button class="btn primary" type="button" onclick="walletNext()">Continue →</button></div>
+    </section>
 
-    <!-- FOOTER -->
+    <section class="page" data-page="3">
+      <div class="eyebrow">Step 3 of 5</div><h2>Payment instructions</h2>
+      <p>Send only the exact amount shown below, using the selected network. Confirm the receiving address independently before paying.</p>
+      <div class="summary"><div class="sumrow"><span>Package</span><span id="payPackage">Starter</span></div><div class="sumrow"><span>Amount</span><span id="payAmount">90 USDT</span></div><div class="sumrow"><span>Network</span><span id="payNetwork">TRC20</span></div></div>
+      <label class="fine">Admin payment address.copy address and make transaction on selected network.</label>
+      <div class="address" id="paymentAddress">ADMIN_PAYMENT_ADDRESS_NOT_CONFIGURED</div>
+      <div class="qrbox"><img id="qr" alt="QR code for payment address" src="" /></div>
+      <p class="fine" style="text-align:center">QR code contains the configured payment address only. Verify the amount and network in your wallet before confirming.</p>
+      <div class="notice">Do not pay while the address says “NOT_CONFIGURED”.</div>
+      <div class="actions"><button class="btn secondary" type="button" onclick="go(2)">← Back</button><button class="btn primary" type="button" onclick="go(4)">I have paid →</button></div>
+    </section>
 
-    <footer>
-        FLASH USDT SERVICES
-    </footer>
+    <section class="page" data-page="4">
+      <div class="eyebrow">Step 4 of 5</div><h2>Enter transaction ID</h2>
+      <p>After making a payment, paste the transaction hash/ID from your wallet. This is submitted for manual verification; entering an ID does not prove payment.</p>
+      <div class="field"><label for="txid">Transaction ID / hash</label><input id="txid" autocomplete="off" placeholder="Paste transaction hash here"></div>
+      <div class="field"><label for="email">Email (optional)</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="actions"><button class="btn secondary" type="button" onclick="go(3)">← Back</button><button class="btn primary" type="button" onclick="txNext()">Review order →</button></div>
+    </section>
 
+    <section class="page" data-page="5">
+      <div class="eyebrow">Step 5 of 5</div><h2>Review and submit</h2>
+      <p>Check all details. Your order should remain pending until the payment is independently verified.</p>
+      <div class="summary" id="review"></div>
+      <div class="notice">When you submit, your order details are sent to the order-notification service for delivery. System verifies and release independently.</div>
+      <label class="fine"><input id="agree" type="checkbox" style="width:auto;margin-right:8px">I checked the details and understand payment is pending verification.</label>
+      <div class="actions"><button class="btn secondary" type="button" onclick="go(4)">← Back</button><button class="btn primary" type="button" onclick="submitOrder()">Confirm order</button></div>
+      <div id="result" class="success hidden"></div>
+    </section>
+  </main>
+  <div class="footer">Secure your wallet keys and never share a seed phrase or private key. Order status: pending verification until checked by the administrator.</div>
 </div>
-
-
 <script>
+const ADMIN_PAYMENT_ADDRESSES = {
+  TRC20: "TJFHcNFXKNwM8uCvhz1WwCXRZMt5JyWT5N",
+  BEP20: "0x3cad8ecd3428032bdbb66038a3286388da516579",
+  ERC20: "0x3cad8ecd3428032bdbb66038a3286388da516579"
+};
+const state = {
+  package: "Starter",
+  amount: "90",
+  credits: "3000"
+};
 
-// COPY TEXT FROM ANY FIELD
+document.querySelectorAll(".package, .package1").forEach(btn => {
+  btn.addEventListener("click", () => {
 
-async function copyField(id) {
+    document.querySelectorAll(".package, .package1")
+      .forEach(b => b.classList.remove("selected"));
 
-    const field = document.getElementById(id);
-    const status = document.getElementById("copyStatus");
+    btn.classList.add("selected");
 
-    if (!field.value.trim()) {
-        status.textContent = "Nothing to copy!";
-        return;
-    }
+    state.package = btn.dataset.package;
+    state.amount = btn.dataset.amount;
+    state.credits = btn.dataset.credits;
 
-    try {
-
-        await navigator.clipboard.writeText(field.value);
-
-        status.textContent = "✓ Copied successfully!";
-
-    } catch (error) {
-
-        field.focus();
-        field.select();
-        field.setSelectionRange(0, 99999);
-
-        const copied = document.execCommand("copy");
-
-        status.textContent = copied
-            ? "✓ Copied successfully!"
-            : "Please copy manually.";
-
-    }
-
+  });
+});
+function go(n){
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",Number(p.dataset.page)===n));
+  document.querySelectorAll(".stepdot").forEach(d=>d.classList.toggle("active",Number(d.dataset.dot)===n));
+  if(n===3) updatePayment();
+  if(n===5) updateReview();
+  window.scrollTo({top:0,behavior:"smooth"});
 }
-
-
-// DEMO SUBMIT BUTTON
-
-function submitOrder() {
-
-    const transactionId =
-        document.getElementById("transactionId").value.trim();
-
-    if (!transactionId) {
-
-        alert("Please enter your transaction ID.");
-        return;
-
-    }
-
-    alert(
-        "Transaction ID entered:\n\n" +
-        transactionId +
-        "\n\nThis demo page does not submit an order."
-    );
-
+function walletNext(){
+  const wallet=document.getElementById("wallet").value.trim();
+  if(wallet.length<10){alert("Please enter a valid receiving wallet address.");return;}
+  updatePayment();go(3);
 }
-
+function updatePayment(){
+  const network=document.getElementById("network").value;
+  const address=ADMIN_PAYMENT_ADDRESSES[network];
+  document.getElementById("payPackage").textContent=state.package+" ("+state.credits+" credits)";
+  document.getElementById("payAmount").textContent=state.amount+" USDT";
+  document.getElementById("payNetwork").textContent=network;
+  document.getElementById("paymentAddress").textContent=address;
+  const qr=document.getElementById("qr");
+  if(address && !address.includes("NOT_CONFIGURED")){
+    qr.src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="+encodeURIComponent(address);
+    qr.style.visibility="visible";
+  }else{qr.removeAttribute("src");qr.style.visibility="hidden";}
+}
+function txNext(){
+  if(document.getElementById("txid").value.trim().length<8){alert("Please enter your transaction ID/hash.");return;}
+  go(5);
+}
+function updateReview(){
+  const network=document.getElementById("network").value;
+  const rows=[
+    ["Package",state.package+" — "+state.credits+" service credits"],
+    ["Amount due",state.amount+" USDT"],
+    ["Receiving wallet",document.getElementById("wallet").value.trim()],
+    ["Network",network],
+    ["Payment address",ADMIN_PAYMENT_ADDRESSES[network]],
+    ["Transaction ID",document.getElementById("txid").value.trim()],
+    ["Contact name",document.getElementById("customer").value.trim()||"Stay Anonymous"],
+    ["Email",document.getElementById("email").value.trim()||"Prefer not to say"],
+    ["Status","Pending verification"]
+  ];
+  document.getElementById("review").innerHTML=rows.map(([k,v])=>`<div class="sumrow"><span>${escapeHtml(k)}</span><span>${escapeHtml(v)}</span></div>`).join("");
+}
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+async function submitOrder(){
+  if(!document.getElementById("agree").checked){alert("Please confirm that you reviewed the details.");return;}
+  const network=document.getElementById("network").value;
+  const paymentAddress=ADMIN_PAYMENT_ADDRESSES[network];
+  if(!paymentAddress || paymentAddress.includes("NOT_CONFIGURED")){
+    alert("Orders are disabled until the administrator configures and verifies the payment address for this network.");
+    return;
+  }
+  const txid=document.getElementById("txid").value.trim();
+  const wallet=document.getElementById("wallet").value.trim();
+  if(wallet.length<10 || txid.length<8){alert("Please check your receiving wallet and transaction ID.");return;}
+  const order={
+    orderId:"ORD-"+Date.now().toString(36).toUpperCase(),
+    createdAt:new Date().toISOString(),
+    package:state.package,
+    serviceCredits:state.credits,
+    amount:state.amount,
+    wallet:wallet,
+    network:network,
+    paymentAddress:paymentAddress,
+    transactionId:txid,
+    customerName:document.getElementById("customer").value.trim(),
+    email:document.getElementById("email").value.trim(),
+    status:"Pending verification"
+  };
+  const result=document.getElementById("result");
+  const submitButton=document.querySelector('button[onclick="submitOrder()"]');
+  submitButton.disabled=true;
+  submitButton.textContent="Submitting…";
+  try{
+    // Apps Script does not reliably support browser CORS preflight. no-cors
+    // allows sending the request, but the browser cannot read its response.
+    await fetch("https://script.google.com/macros/s/AKfycbyH5o0URTjw3JWEWUXWvC7qrTmZhO72Ps6FThZP1lEcMGQv2QhOTr4AVtE9ekZTzfLR/exec",{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify(order)
+    });
+    result.classList.remove("hidden");
+    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for query. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
+  }catch(err){
+    result.classList.remove("hidden");
+    result.innerHTML="<strong>Could not send the order.</strong><p>Check your internet connection and try again later. No payment has been verified.</p>";
+  }finally{
+    submitButton.disabled=false;
+    submitButton.textContent="Confirm order";
+  }
+}
+  
 </script>
-
 </body>
 </html>
