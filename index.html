@@ -148,54 +148,7 @@ input:focus,select:focus{border-color:var(--teal)}
 .footer{text-align:center;color:#71859f;font-size:12px;margin-top:18px}
 
 .hidden{display:none!important}
-
-@media(max-width:420px){
-    .card{padding:17px}
-    .packages{gap:9px}
-    .package{padding:12px}
-    .package1{padding:12px}
-    .package.selected{padding:11px}
-    .package1.selected{padding:11px}
-    .package strong{font-size:19px}
-    .package1 strong{font-size: 19px}
-    .stepdot{font-size:10px}
-}
-.coin-logo {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    perspective: 1000px;
-    animation: coinSpin 4s linear infinite;
-    filter: drop-shadow(0 0 12px #00f2c6);
-}
-
-@keyframes coinSpin {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-    .telegram-button {
-    display: inline-block;
-    background: #229ED9;
-    color: white;
-    padding-left: 110px ;
-    border-radius: 8px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    width: 280px;
-    height:30px;
-    border-radius:40px;
-    margin-bottom: 20px;
-}
-.telegram-button:hover {
-    background: #264ee5;
-}
-
-.floating-bounce {
+  .floating-bounce {
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -218,13 +171,43 @@ input:focus,select:focus{border-color:var(--teal)}
         transform: translateY(-20px);
     }
 }
+
+@media(max-width:420px){
+    .card{padding:17px}
+    .packages{gap:9px}
+    .package{padding:12px}
+    .package1{padding:12px}
+    .package.selected{padding:11px}
+    .package1.selected{padding:11px}
+    .package strong{font-size:19px}
+    .package1 strong{font-size: 19px}
+    .stepdot{font-size:10px}
+    .telegram-button {
+    display: inline-block;
+    background: #229ED9;
+    color: white;
+    padding-left: 110px ;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 280px;
+    height:30px;
+    border-radius:40px;
+    margin-bottom: 20px;
+}
+.telegram-button:hover {
+    background: #264ee5;
+}
+}
 </style>
 
 </head>
 <body>
 <div class="wrap">
   <header class="brand">
-    <img src="logo.png" alt="Logo" class="coin-logo">
+    <img src="usdtlogo.png" alt="Logo" class="usdtlogo">
     <div>
       <h1>FLASH USDT SERVICES</h1>
       <p>Transparent order submission</p>
@@ -233,11 +216,8 @@ input:focus,select:focus{border-color:var(--teal)}
   <div class="steps" aria-label="Order progress">
         <div class="stepdot active" data-dot="1">1 · Package</div><div class="stepdot" data-dot="2">2 · Wallet</div><div class="stepdot" data-dot="3">3.Payment</div><div class="stepdot" data-dot="4">4 · TX ID</div><div class="stepdot" data-dot="5">5 · Review</div>
 
-<div class="bouncing-image">
-    <img src="support.png" alt="Telegram">
-</div>
+  </div>
 
-  <div>
     <section class="page active" data-page="1">
       <div class="eyebrow">Step 1 of 5</div><h2>Choose your service package</h2>
       <p>Select the package you want to order. Prices and deliverables must be clearly agreed before payment.</p>
@@ -263,7 +243,7 @@ input:focus,select:focus{border-color:var(--teal)}
       <select id="network"><option value="TRC20">TRC20 (TRON)</option>
       <option value="BEP20">BEP20 (BNB Smart Chain)</option>
       <option value="ERC20">ERC20 (Ethereum)</option></select></div>
-      <div class="field"><label for="customer">Telegram ID</label><input id="customer" placeholder="Your Telegram ID"></div>
+      <div class="field"><label for="customer">Telegram username</label><input id="customer" autocomplete="off" placeholder="@username"></div>
       <div class="notice">Sending assets on the wrong network can cause permanent loss. Confirm the address and network before proceeding.</div>
       <div class="actions"><button class="btn secondary" type="button" onclick="go(1)">← Back</button><button class="btn primary" type="button" onclick="walletNext()">Continue →</button></div>
     </section>
@@ -410,7 +390,7 @@ async function submitOrder(){
       body:JSON.stringify(order)
     });
     result.classList.remove("hidden");
-    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for query. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
+    result.innerHTML="<strong>Order submission failed!</strong><p>Transaction ID/hash is invalid! Copy your order number and contact us for quiery. do not submit repeatedly.</p><p><strong>Order ID:</strong> "+escapeHtml(order.orderId)+"</p>";
   }catch(err){
     result.classList.remove("hidden");
     result.innerHTML="<strong>Could not send the order.</strong><p>Check your internet connection and try again later. No payment has been verified.</p>";
@@ -421,8 +401,8 @@ async function submitOrder(){
 }
   
 </script>
-<div class="floating-bounce">
-    <img src="support.png" alt="✍️">
+  <div class="floating-bounce">
+    <img src="logo.png" alt="Floating Logo">
 </div>
 </body>
 </html>
